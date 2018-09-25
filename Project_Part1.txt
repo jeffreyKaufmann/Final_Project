@@ -1,0 +1,28 @@
+Name: Jeffrey Kaufmann
+GitHub link: https://github.com/jeffreyKaufmann/Final_Project
+
+Title: Music Playlist 
+
+Description: Simple website that takes in a users Song choices and add them to a playlist. Songs will be sorted by album and artist and be sorted in a playlist
+
+Actors: Musician, Listener
+
+Functionality:
+Listener can sign up
+Listener, Musician can log in
+Musician can add a new album
+Musician can add new songs to an exisiting Album
+Musician can delete songs from an existing albums
+Listener can create a playlist
+Listener can add songs to a playlist
+Listener can delete songs from a playlist
+Listener can rename the playlist
+Listener can sort a playlist 
+	-By Artist
+	-By Song name
+	-By Album
+
+
+[OPTIONAL] Stretch Functionality: 
+Musician can track users listeners amount of plays of a song
+User can track their favorite most played songs
