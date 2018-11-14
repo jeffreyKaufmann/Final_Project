@@ -1,16 +1,23 @@
-public class Playlist 
+public class Playlist extends Listener 
 {
 	private String playlistName;
 	private Song[] songs;
 	int num;
-	public Playlist()
+	public Playlist(int playlistLength, String playlist)
 	{
-		songs = new Song[30];
+		super("Username","pass");
+		playlistName = playlist;
+		songs = new Song[playlistLength];
 		num = 0;
 	}
 	public void displayPlaylist()
 	{
+		System.out.println("Playlist:");
+		for(int i=0; i<num; i++)
+		{
 
+			System.out.println(songs[i].toString()+ " Album Name: " + songs[i].getAlbumName() + " Artist Name: " + songs[i].getArtistName());
+		}
 	}
 	public String getPlaylistName() 
 	{
@@ -24,20 +31,19 @@ public class Playlist
 	{
 		playName = null;
 	}
-	/*
 	public void addSong(Song songName)
 	{
 		if(num<songs.length)
 		{
-			song[num]= songName;
+			songs[num]= songName;
 			num++;
 		}
 		else
 		{
-			System.out.println("Playlist is Full");
+			System.out.println("Error: Playlist is Full");
 		}
 	}
-	public removeSong (string Name)
+	public void removeSong (String name)
 	{
 		boolean found = false;
 		int id = 0;
@@ -48,11 +54,11 @@ public class Playlist
 			}
 			else
 			{
-				song[id].getN
+
 			}
 
 	}
-	*/
+	
 
 
 

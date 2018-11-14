@@ -1,9 +1,9 @@
 public class SongDriver {
    public static void main(String[] args) {
-      Playlist one = new Playlist();
-      
+
       Artist artist1 = new Artist("Drake");
-      
+      Playlist play1 = new Playlist(20, "Jams");
+
       Album album1 = new Album(artist1.getArtistName(), "Hotline Bling");
       artist1.addAlbum(album1);
       Song song1 = new Song("Hotling Bling", artist1.getArtistName(), album1.getAlbumName());
@@ -34,10 +34,18 @@ public class SongDriver {
       album2.addSong(song7);
       album2.addSong(song8);
       album2.addSong(song9);
-
       album3.addSong(song10);
       album3.addSong(song11);
 
+      play1.addSong(song1);
+      play1.addSong(song3);
+      play1.addSong(song4);
+      play1.addSong(song5);
+      play1.addSong(song9);
+      play1.addSong(song7);
+      play1.addSong(song8);
+      System.out.println(song1.getAlbumName());
+      play1.displayPlaylist();
       artist1.printArtist();
       artist2.printArtist();
 
