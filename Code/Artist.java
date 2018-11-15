@@ -34,7 +34,7 @@ public class Artist extends Listener
 	public void printArtist()
 	{
 		int i =0;
-		System.out.println("\nArtist Name:" + name);
+		System.out.print("\nArtist Name:" + name);
 		while(i<num)
 		{
 			albums[i].printAlbum();

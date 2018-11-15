@@ -16,7 +16,7 @@ public class Playlist extends Listener
 		for(int i=0; i<num; i++)
 		{
 
-			System.out.println(songs[i].toString()+ " Album Name: " + songs[i].getAlbumName() + " Artist Name: " + songs[i].getArtistName());
+			System.out.println(songs[i].toString()+ "| Album Name: " + songs[i].getAlbumName() + "| Artist Name: " + songs[i].getArtistName());
 		}
 	}
 	public String getPlaylistName() 

@@ -1,6 +1,12 @@
 public class SongDriver {
+      public void CreateListener(String username, String pass)
+      {
+            Listener list = new Listener(username,pass);
+
+      }
    public static void main(String[] args) {
 
+      Listener list1 = new Listener("Atriole", "12345678");
       Artist artist1 = new Artist("Drake");
       Playlist play1 = new Playlist(20, "Jams");
 
@@ -44,7 +50,11 @@ public class SongDriver {
       play1.addSong(song9);
       play1.addSong(song7);
       play1.addSong(song8);
-      System.out.println(song1.getAlbumName());
+
+      list1.addToFaves(song7);
+      list1.addToFaves(song8);
+      list1.printFaves();
+      System.out.print("\n");
       play1.displayPlaylist();
       artist1.printArtist();
       artist2.printArtist();
