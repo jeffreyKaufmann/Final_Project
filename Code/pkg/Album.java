@@ -5,7 +5,6 @@ public class Album extends Artist
 
 	public String albumName;
 	public String artistName;
-	public static int date;
 	public ArrayList<Song> songs = new ArrayList<Song>();
 	//public static byte[] Image;
 	public Album(String artist, String album)
@@ -19,9 +18,6 @@ public class Album extends Artist
 	public void addAlbum(String artist, String album)
 	{
 		Album album1 = new Album(artist, album);
-	}
-	public void deleteAlbum(Album name)
-	{
 	}
 	public void addSong(Song song)
 	{

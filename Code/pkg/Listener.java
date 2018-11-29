@@ -4,7 +4,6 @@ public class Listener extends SongDriver
 {
 	private String userName;
 	private String passWord;
-	public Song[] playlist;
 	ArrayList<Song> faves = new ArrayList<Song>(1);
 	ArrayList<Playlist> players = new ArrayList<Playlist>();
 
