@@ -93,7 +93,7 @@ public class SongDriver {
 
 
 
-      album1.printAlbumIt();
+
 
       SongDriver abc = new SongDriver();
       abc.controlCreateListener();
@@ -101,6 +101,7 @@ public class SongDriver {
       System.out.println("Displaying Top Artists: ");
       artist1.printArtist();
       artist2.printArtist();
+
       System.out.println("Displaying Favorites:");
       list1.printFaves();
       (abc.getListener(0)).addNewPlaylist(play1);
