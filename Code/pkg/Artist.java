@@ -1,15 +1,13 @@
 package pkg;
 import java.util.Scanner;
+import java.util.*;
 public class Artist extends Listener
 {
 	public String name;
-	public Album[] albums;
-	public int num;
+	public ArrayList<Album> albums = new ArrayList<Album>();
 	public Artist(String artistName)
 	{
 		super("x","x");
-		num = 0;
-		albums = new Album[30];
 		this.name = artistName;
 	}
 	public void setArtistName(String artistName)
@@ -22,23 +20,15 @@ public class Artist extends Listener
 	}
 	public void addAlbum(Album album)
 	{
-		if(num<albums.length)
-		{
-			albums[num]= album;
-			num++;
-		}
-		else
-		{
-			System.out.println("Artist albums are Full");
-		}
+		albums.add(album);
 	}
 	public void printArtist()
 	{
 		int i =0;
 		System.out.print("\nArtist Name:" + name);
-		while(i<num)
+		while(i<albums.size())
 		{
-			albums[i].printAlbum();
+			albums.get(i).printAlbum();
 			i++;
 		}
 	}

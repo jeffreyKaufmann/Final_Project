@@ -1,4 +1,5 @@
 package pkg;
+import java.util.*;
 public class Song extends Album
 {
 	private String songName;
@@ -9,8 +10,8 @@ public class Song extends Album
 	{
 		super(artist, album);
 		this.songName = name;
-		this.artistName = getArtistName();
-		this.albumName = getAlbumName();
+		this.artistName = artist;
+		this.albumName = album;
 	}
 	public void addSong(String name, String artist, String album)
 	{

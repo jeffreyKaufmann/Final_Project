@@ -6,6 +6,7 @@ public class Listener extends SongDriver
 	private String passWord;
 	public Song[] playlist;
 	ArrayList<Song> faves = new ArrayList<Song>(1);
+	ArrayList<Playlist> players = new ArrayList<Playlist>();
 
 	public Listener(String name, String pass)
 	{
@@ -20,6 +21,10 @@ public class Listener extends SongDriver
 	{
 		faves.remove(song);
 	}
+	public void addNewPlaylist(Playlist playName)
+	{
+		players.add(playName);
+	}
 	public void printFaves()
 	{
 		System.out.println("Favorites:");
@@ -33,8 +38,27 @@ public class Listener extends SongDriver
 		ArrayList<String> output = new ArrayList<String>();
 		for(int i=0; i<faves.size(); i++)
 		{
-			output.add(faves.get(i).toString());
+			output.add((faves.get(i)).toString());
 		}
 		return output;
 	}
+	public Playlist selectPlaylist()
+    {
+        int playlistValue = 0;
+        for(int i=0;i<players.size();i++)
+        {
+            System.out.println( i+1 + ")");
+            players.get(i).displayPlaylist();
+        }
+        System.out.println("\nSelect Playlist (Enter Int):");
+        playlistValue = scanner.nextInt();
+        while(playlistValue>players.size() || playlistValue<0)
+        {
+        	System.out.println("Reselect Playlist:");
+        	playlistValue = scanner.nextInt();
+        }
+        playlistValue--;
+        return players.get(playlistValue);
+
+    }
 }

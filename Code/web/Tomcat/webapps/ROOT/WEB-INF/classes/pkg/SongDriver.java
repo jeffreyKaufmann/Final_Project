@@ -27,6 +27,7 @@ public class SongDriver {
       }
       public void controlCreatePlaylist()
       {
+            System.out.println("\nCreating a Playlist");
             System.out.println("Enter playlist name:");
             String playlistName = scanner.next();
             Playlist playlist1 = new Playlist(0, playlistName);
@@ -90,11 +91,29 @@ public class SongDriver {
       list1.addToFaves(song7);
       list1.addToFaves(song8);
 
+
+
+
+
       SongDriver abc = new SongDriver();
       abc.controlCreateListener();
+
+      System.out.println("Displaying Top Artists: ");
+      artist1.printArtist();
+      artist2.printArtist();
+      System.out.println("Displaying Favorites:");
+      list1.printFaves();
+
       (abc.getListener(0)).addNewPlaylist(play1);
+
+      //Button press to create playlist Theoretical
       abc.controlCreatePlaylist();
-      abc.getListener(0).selectPlaylist();
+      //Button press to enter selected playlist
+      Playlist selected = abc.getListener(0).selectPlaylist();
+      //Adding a random song to playlist would be a button but Search functionallity isn't finished
+      selected.addSong(song3);
+      selected.displayPlaylist();
+
 
 
    }

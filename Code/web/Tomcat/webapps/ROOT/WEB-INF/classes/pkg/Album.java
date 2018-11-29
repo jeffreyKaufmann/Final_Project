@@ -2,6 +2,7 @@ package pkg;
 import java.util.*;
 public class Album extends Artist
 {
+
 	public String albumName;
 	public String artistName;
 	public static int date;
@@ -38,6 +39,15 @@ public class Album extends Artist
 		{
 			System.out.println(songs.get(i).toString());
 			i++;
+		}
+	}
+	public void printAlbumIt()
+	{
+		AlbumIterator music = new AlbumIterator(songs);
+		System.out.println("\nAlbum Name:" + albumName);
+		while(music.hasNext())
+		{
+			System.out.println(songs.next().toString());
 		}
 	}
 }

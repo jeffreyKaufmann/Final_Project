@@ -1,46 +1,31 @@
 package pkg;
+import java.util.*;
 public class Album extends Artist
 {
+
 	public String albumName;
 	public String artistName;
 	public static int date;
-	public Song[] songs;
-	public int num;
+	public ArrayList<Song> songs = new ArrayList<Song>();
 	//public static byte[] Image;
 	public Album(String artist, String album)
 	{
 		super(artist);
-		num =0;
 		//int exactDate = (int) (new Date().getTime()/1000);
 		this.artistName = getArtistName();
 		this.albumName = album;
-		songs = new Song[15];
-		//this.date = new Date(((long)exactDate)*1000L);
+		
 	}
-	/*public void getDate()
-	{
-		return(date);
-	}
-	*/
 	public void addAlbum(String artist, String album)
 	{
 		Album album1 = new Album(artist, album);
 	}
 	public void deleteAlbum(Album name)
 	{
-
 	}
 	public void addSong(Song song)
 	{
-		if(num<songs.length)
-		{
-			songs[num]= song;
-			num++;
-		}
-		else
-		{
-			System.out.println("Album is Full");
-		}
+		songs.add(song);
 	}
 	public String getAlbumName()
 	{
@@ -50,10 +35,19 @@ public class Album extends Artist
 	{
 		int i =0;
 		System.out.println("\nAlbum Name:" + albumName);
-		while(i<num)
+		while(i<songs.size())
 		{
-			System.out.println(songs[i].toString());
+			System.out.println(songs.get(i).toString());
 			i++;
+		}
+	}
+	public void printAlbumIt()
+	{
+		AlbumIterator music = new AlbumIterator(songs);
+		System.out.println("\nAlbum Name:" + albumName);
+		while(music.hasNext())
+		{
+			System.out.println(music.next().toString());
 		}
 	}
 }

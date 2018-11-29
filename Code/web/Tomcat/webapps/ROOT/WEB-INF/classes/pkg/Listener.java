@@ -50,21 +50,15 @@ public class Listener extends SongDriver
             System.out.println( i+1 + ")");
             players.get(i).displayPlaylist();
         }
-        System.out.println("Select Playlist:");
+        System.out.println("\nSelect Playlist (Enter Int):");
         playlistValue = scanner.nextInt();
-        playlistValue--;
-        while(playlistValue>=players.size())
+        while(playlistValue>players.size() || playlistValue<0)
         {
         	System.out.println("Reselect Playlist:");
         	playlistValue = scanner.nextInt();
         }
+        playlistValue--;
         return players.get(playlistValue);
 
     }
-	/*
-	public ArrayList<Song> searchSong(String search)
-	{
-
-	}
-	*/
 }

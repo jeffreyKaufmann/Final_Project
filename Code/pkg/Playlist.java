@@ -1,23 +1,21 @@
 package pkg;
+import java.util.*;
 public class Playlist extends Listener 
 {
 	private String playlistName;
-	private Song[] songs;
-	int num;
+	private ArrayList<Song> songs = new ArrayList<Song>();
 	public Playlist(int playlistLength, String playlist)
 	{
 		super("Username","pass");
 		playlistName = playlist;
-		songs = new Song[playlistLength];
-		num = 0;
 	}
 	public void displayPlaylist()
 	{
-		System.out.println("Playlist:");
-		for(int i=0; i<num; i++)
+		System.out.println("Playlist: " + this.getPlaylistName());
+		for(int i=0; i<songs.size(); i++)
 		{
 
-			System.out.println(songs[i].toString()+ "| Album Name: " + songs[i].getAlbumName() + "| Artist Name: " + songs[i].getArtistName());
+			System.out.println(songs.get(i).toString()+ "| Album Name: " + songs.get(i).getAlbumName() + "| Artist Name: " + songs.get(i).getArtistName());
 		}
 	}
 	public String getPlaylistName() 
@@ -32,31 +30,13 @@ public class Playlist extends Listener
 	{
 		playName = null;
 	}
-	public void addSong(Song songName)
+	public void addSong(Song song)
 	{
-		if(num<songs.length)
-		{
-			songs[num]= songName;
-			num++;
-		}
-		else
-		{
-			System.out.println("Error: Playlist is Full");
-		}
+		songs.add(song);
 	}
-	public void removeSong (String name)
+	public void removeSong (Song song)
 	{
-		boolean found = false;
-		int id = 0;
-		while(id< num)
-			if(found == true)
-			{
-
-			}
-			else
-			{
-
-			}
+		songs.remove(song);
 
 	}
 	
